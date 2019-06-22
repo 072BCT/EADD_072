@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'sadsadasdsadsadsaasfdsfdsfsevfasv gar
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'eadd-072.sushant.info.np', 'eadd072.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'eadd-072.sushant.info.np',]
 
 AUTH_USER_MODEL = 'WebApp.Member'
 
