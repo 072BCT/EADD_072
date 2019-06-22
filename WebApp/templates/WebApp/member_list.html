@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <p><a class="btn btn-default" href="{% url 'member_list' %}">Member Listing</a></p>
+    <table class="table">
+        <tr>
+            <td>ID</td>
+            <td>Link</td>
+            <td>MemberRegistrationID</td>
+            <td>MemberName</td>
+            <td>MemberGender</td>
+            <td>MemberBirthDate</td>
+            <td>MemberFatherName</td>
+            <td>MemberPhone</td>
+            <td>MemberVerified</td>
+            <td>MemberRegisterDateTime</td>
+            <td>MemberRegisterAgent</td>
+            <td>MemberNote</td>
+            <td>MemberStreetTemporaryAddress</td>
+            <td>MemberStreetPermanentAddress</td>
+        </tr>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ object.pk }}</td>
+                <td><a href="{{ object.get_absolute_url }}">{{ object }}</a></td>
+                <td>{{ object.MemberRegistrationID }}</td>
+                <td>{{ object.MemberName }}</td>
+                <td>{{ object.MemberGender }}</td>
+                <td>{{ object.MemberBirthDate }}</td>
+                <td>{{ object.MemberFatherName }}</td>
+                <td>{{ object.MemberPhone }}</td>
+                <td>{{ object.MemberVerified }}</td>
+                <td>{{ object.MemberRegisterDateTime }}</td>
+                <td>{{ object.MemberRegisterAgent }}</td>
+                <td>{{ object.MemberNote }}</td>
+                <td>{{ object.MemberStreetTemporaryAddress }}</td>
+                <td>{{ object.MemberStreetPermanentAddress }}</td>
+            </tr>
+        {% endfor %}
+    </table><a class="btn btn-primary" href="{% url 'member_create' %}">Create new Member</a>
+{% endblock %}

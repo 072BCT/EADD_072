@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <p><a class="btn btn-default" href="{% url 'institution_list' %}">Institution Listing</a></p>
+    <table class="table">
+        <tr>
+            <td>InstitutionName</td>
+            <td>{{ object.InstitutionName }}</td>
+        </tr>
+        <tr>
+            <td>InstitutionEmail</td>
+            <td>{{ object.InstitutionEmail }}</td>
+        </tr>
+        <tr>
+            <td>InstitutionPhone</td>
+            <td>{{ object.InstitutionPhone }}</td>
+        </tr>
+        <tr>
+            <td>InstitutionWebsite</td>
+            <td>{{ object.InstitutionWebsite }}</td>
+        </tr>
+        <tr>
+            <td>InstitutionAddressStreet</td>
+            <td>{{ object.InstitutionAddressStreet }}</td>
+        </tr>
+        <tr>
+            <td>InstitutionNote</td>
+            <td>{{ object.InstitutionNote }}</td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" href="{{ object.get_update_url }}">Edit Institution</a>
+
+{% endblock %}

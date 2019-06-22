@@ -1,0 +1,91 @@
+from datetime import datetime
+
+from django.db import models as models
+from django.db.models import CharField, ForeignKey, DateField, BooleanField, DateTimeField
+
+GENDER_CHOICES = (
+('M', 'Male'),
+('F', 'Female'),
+('O', 'Others')
+)
+
+
+class AddressCountry(models.Model):
+# Fields
+CountryName = CharField(max_length=250, blank=True, default="Nepal")
+
+
+class AddressProvince(models.Model):
+# Fields
+ProvinceName = CharField(max_length=250, blank=True, null=True)
+
+Country = ForeignKey(
+AddressCountry, on_delete=models.CASCADE
+)
+
+
+class AddressZone(models.Model):
+# Fields
+ZoneName = CharField(max_length=250, blank=True, null=True)
+
+Province = ForeignKey(
+AddressProvince, on_delete=models.CASCADE
+)
+
+
+class AddressDistrict(models.Model):
+# Fields
+DistrictName = CharField(max_length=250, blank=True, null=True)
+
+Zone = ForeignKey(
+AddressZone, on_delete=models.CASCADE
+)
+
+
+class AddressVDCMunicipality(models.Model):
+# Fields
+VDCMunicipalityName = CharField(max_length=250, blank=True, null=True)
+
+District = ForeignKey(
+AddressDistrict, on_delete=models.CASCADE
+)
+
+
+class Institution(models.Model):
+# Fields
+InstitutionName = CharField(max_length=250, blank=True, null=True)
+InstitutionEmail = CharField(max_length=150, blank=True, null=True)
+InstitutionPhone = CharField(max_length=150, blank=True, null=True)
+InstitutionWebsite = CharField(max_length=150, blank=True, null=True)
+InstitutionAddressStreet = CharField(max_length=100, blank=True, null=True)
+InstitutionNote = CharField(max_length=150, blank=True, null=True)
+
+InstitutionAddressVDCMunicipality = ForeignKey(
+AddressVDCMunicipality, on_delete=models.DO_NOTHING
+)
+
+
+class Member(models.Model):
+# Fields
+MemberRegistrationID = CharField(max_length=250, blank=True, null=True)
+MemberName = CharField(max_length=500, blank=True, null=True)
+MemberGender = CharField(max_length=1, choices=GENDER_CHOICES)
+MemberBirthDate = DateField(blank=True, null=True)
+MemberFatherName = CharField(max_length=500, blank=True, null=True)
+MemberPermanentAddress = ForeignKey(
+AddressVDCMunicipality, on_delete=models.DO_NOTHING, null=True
+)
+MemberStreetPermanentAddress = CharField(max_length=100, blank=True, null=True)
+MemberTemporaryAddress = ForeignKey(
+AddressVDCMunicipality, on_delete=models.DO_NOTHING, null=True
+)
+MemberStreetTemporaryAddress = CharField(max_length=100, blank=True, null=True)
+MemberPhone = CharField(max_length=150, blank=True, null=True)
+MemberVerified = BooleanField(default=False)
+MemberRegisterDateTime = DateTimeField(default=datetime.now(), blank=True)
+MemberRegisterAgent = CharField(max_length=200, blank=True, null=True)
+MemberNote = CharField(max_length=500, blank=True, null=True)
+
+MemberInstitution = ForeignKey(
+Institution, on_delete=models.CASCADE, null=True
+)

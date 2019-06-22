@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <p><a class="btn btn-default" href="{% url 'institution_list' %}">Institution Listing</a></p>
+    <table class="table">
+        <tr>
+            <td>ID</td>
+            <td>Link</td>
+            <td>InstitutionName</td>
+            <td>InstitutionEmail</td>
+            <td>InstitutionPhone</td>
+            <td>InstitutionWebsite</td>
+            <td>InstitutionAddressStreet</td>
+            <td>InstitutionNote</td>
+        </tr>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ object.pk }}</td>
+                <td><a href="{{ object.get_absolute_url }}">{{ object }}</a></td>
+                <td>{{ object.InstitutionName }}</td>
+                <td>{{ object.InstitutionEmail }}</td>
+                <td>{{ object.InstitutionPhone }}</td>
+                <td>{{ object.InstitutionWebsite }}</td>
+                <td>{{ object.InstitutionAddressStreet }}</td>
+                <td>{{ object.InstitutionNote }}</td>
+            </tr>
+        {% endfor %}
+    </table><a class="btn btn-primary" href="{% url 'institution_create' %}">Create new Institution</a>
+{% endblock %}

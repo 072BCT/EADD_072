@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <p><a class="btn btn-default" href="{% url 'addresscountry_list' %}">AddressCountry Listing</a></p>
+    <table class="table">
+        <tr>
+            <td>CountryName</td>
+            <td>{{ object.CountryName }}</td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" href="{{ object.get_update_url }}">Edit AddressCountry</a>
+
+{% endblock %}

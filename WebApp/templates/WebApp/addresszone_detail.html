@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <p><a class="btn btn-default" href="{% url 'addresszone_list' %}">AddressZone Listing</a></p>
+    <table class="table">
+        <tr>
+            <td>ZoneName</td>
+            <td>{{ object.ZoneName }}</td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" href="{{ object.get_update_url }}">Edit AddressZone</a>
+
+{% endblock %}
