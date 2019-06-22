@@ -36,7 +36,7 @@ Now, open a Web browser and go to “/admin/” on your local domain – e.g., h
 
 
 ## APIs
-Visit http://127.0.0.1:8000/api/v1/ to explore the API. You only can explore APIs after you login to Django Admin screen using superuser access.
+Visit http://eadd-072.sushant.info.np/api/v1/ to explore the API. You only can explore APIs after you login to Django Admin screen using superuser access.
 
 
 # Live Deployment:
