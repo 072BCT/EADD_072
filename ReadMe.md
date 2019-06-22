@@ -40,7 +40,7 @@ Visit http://127.0.0.1:8000/api/v1/ to explore the API. You only can explore API
 
 
 # Live Deployment:
-Check  http://eadd-072.sushant.info.np for latest updated website. The website gets automically updated after around 5 minutes of commits pushed to Gitlab.
+Check  http://eadd-072.sushant.info.np for latest updated website. The website gets automically updated after around 5 minutes of commits pushed to GitHub.
 Username: 072bct500 Password: 072bct500
 
 # Project Management Links
