@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'sadsadasdsadsadsaasfdsfdsfsevfasv gar
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'eadd-072.sushant.info.np', 'eadd072.herokuapp.com']
 
 AUTH_USER_MODEL = 'WebApp.Member'
 
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
     'WebApp',
-    'herokuapp'
+
 ]
 
 MIDDLEWARE = [
