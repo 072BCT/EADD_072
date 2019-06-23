@@ -37,7 +37,7 @@ Now, open a Web browser and go to “/admin/” on your local domain – e.g., h
 
 ## APIs
 Visit http://eadd-072.sushant.info.np/api/v1/ to explore the API. You only can explore APIs after you login to Django Admin screen using superuser access.
-
+<br> Use http://eadd-072.sushant.info.np/rest-auth/login/ for auth API info.
 
 # Live Deployment:
 Check  http://eadd-072.sushant.info.np for latest updated website. The website gets automically updated after around 5 minutes of commits pushed to GitHub.
